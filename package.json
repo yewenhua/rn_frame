@@ -1,0 +1,36 @@
+{
+  "name": "antui",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest"
+  },
+  "dependencies": {
+    "antd-mobile": "^2.0.0-beta.6",
+    "jcore-react-native": "^1.2.5",
+    "jpush-react-native": "^2.1.12",
+    "react": "^16.0.0",
+    "react-native": "0.50.3",
+    "react-native-animatable": "^1.2.4",
+    "react-native-splash-screen": "^3.0.6",
+    "react-native-svg": "^5.5.1",
+    "react-navigation": "^1.0.0-beta.21",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0"
+  },
+  "devDependencies": {
+    "babel-jest": "21.2.0",
+    "babel-plugin-import": "^1.6.1",
+    "babel-preset-react-native": "4.0.0",
+    "jest": "21.2.1",
+    "rc-form": "^2.1.7",
+    "react-native-gallery": "0.0.17",
+    "react-native-lightbox": "^0.7.0",
+    "react-test-renderer": "16.0.0-beta.5"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
