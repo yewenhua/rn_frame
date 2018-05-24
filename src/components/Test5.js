@@ -95,16 +95,16 @@ export default class Test5 extends Component {
         );
     }
 
-    _skip() {
-        this.props.navigation.goBack();
-    }
-
     _onPress() {
         LayoutAnimation.spring();
         this.setState({
             width: Number.parseInt(this.state.width) + 20,
             height: Number.parseInt(this.state.height) + 20
         });
+    }
+
+    navigatePress = () => {
+        this.props.navigation.navigate('DrawerOpen');
     }
 
     render() {
@@ -115,7 +115,7 @@ export default class Test5 extends Component {
 
         return(
             <View style={{flex:1, padding:15}}>
-                <Text onPress={this._skip.bind(this)}>返回上一界面</Text>
+                <Text onPress={this.navigatePress.bind(this)}>抽屉菜单</Text>
                 <CustomButton text="添加View"  onPress={this._onPressAddView.bind(this)}/>
                 <CustomButton text="删除View"  onPress={this._onPressRemoveView.bind(this)}/>
                 <View style={styles.viewContainer}>
@@ -158,5 +158,9 @@ const styles = StyleSheet.create({
     box: {
         margin:5,
         backgroundColor: 'red'
+    },
+    icon:{
+        height: 24,
+        width: 24
     }
 });

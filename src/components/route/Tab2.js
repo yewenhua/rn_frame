@@ -8,8 +8,8 @@ import {
     DeviceEventEmitter
 } from 'react-native';
 
-const GankIcon = require('../img/pic.png');
-const GankIconFill = require('../img/pic_fill.png');
+const GankIcon = require('../../img/pic.png');
+const GankIconFill = require('../../img/pic_fill.png');
 
 let badgeNumber = 11;
 
@@ -21,8 +21,8 @@ export default class Test2 extends Component {
         // 下面就是文章中修改主题色的方法
         headerStyle:{backgroundColor: screenProps ? '#4ECBFC' : '#4ECBFC', height: 48},
         headerTitleStyle: {fontSize:20, color:'white', alignSelf:'center'},
-        headerTitle:navigation.state.params ? navigation.state.params.headerTitle : 'Test2',
-        tabBarLabel:navigation.state.params ? navigation.state.params.tabBarLabel : 'Test2',
+        headerTitle:navigation.state.params ? navigation.state.params.headerTitle : '干货',
+        tabBarLabel:navigation.state.params ? navigation.state.params.tabBarLabel : '干货',
         tabBarIcon: (({tintColor,focused}) => {
             if(focused){
                 // 做操作
@@ -54,7 +54,7 @@ export default class Test2 extends Component {
     }
 
     navigatePress = () => {
-        alert('点击headerRight');
+        this.props.navigation.navigate('DrawerOpen');
     }
 
     render() {

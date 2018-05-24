@@ -25,7 +25,7 @@ export default class Test4 extends Component {
         const LightboxView = ({ navigator }) => (
             <Lightbox>
                 <Image
-                    style={{ height: 300, width: '100%' }}
+                    style={{ height: 300, width: 300 }}
                     source={require('../img/1.jpg')}
                 />
             </Lightbox>

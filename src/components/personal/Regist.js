@@ -23,8 +23,7 @@ export default class Regist extends Component {
         headerTitleStyle:{
             fontSize:20,
             color:'white',
-            alignSelf:'center',
-            marginLeft: -30
+            alignSelf:'center'
         },
         // 设置滑动返回的距离
         gestureResponseDistance:{horizontal:300},

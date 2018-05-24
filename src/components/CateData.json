@@ -1,0 +1,591 @@
+{
+  "nav": [
+    {
+      "text": "女装",
+      "id": 1
+    },
+    {
+      "text": "男装",
+      "id": 2
+    },
+    {
+      "text": "运动",
+      "id": 3
+    },
+    {
+      "text": "家居",
+      "id": 4
+    },
+    {
+      "text": "电子",
+      "id": 5
+    },
+    {
+      "text": "美妆",
+      "id": 6
+    },
+    {
+      "text": "童装",
+      "id": 7
+    },
+    {
+      "text": "家具",
+      "id": 8
+    },
+    {
+      "text": "耐克",
+      "id": 9
+    },
+    {
+      "text": "阿迪",
+      "id": 10
+    },
+    {
+      "text": "宜家",
+      "id": 11
+    },
+    {
+      "text": "安踏",
+      "id": 12
+    },
+    {
+      "text": "匹克",
+      "id": 13
+    }
+  ],
+  "list": [
+    {
+      "text": "女装 >",
+      "items": [
+        {
+          "id": 1,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        },
+        {
+          "id": 2,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        },
+        {
+          "id": 3,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        },
+        {
+          "id": 4,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        },
+        {
+          "id": 5,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        },
+        {
+          "id": 6,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        }
+      ]
+    },
+    {
+      "text": "男装 >",
+      "items": [
+        {
+          "id": 1,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        },
+        {
+          "id": 2,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        },
+        {
+          "id": 3,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        },
+        {
+          "id": 4,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        },
+        {
+          "id": 5,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        },
+        {
+          "id": 6,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        }
+      ]
+    },
+    {
+      "text": "运动 >",
+      "items": [
+        {
+          "id": 1,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        },
+        {
+          "id": 2,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        },
+        {
+          "id": 3,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        },
+        {
+          "id": 4,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        },
+        {
+          "id": 5,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        },
+        {
+          "id": 6,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        }
+      ]
+    },
+    {
+      "text": "家居 >",
+      "items": [
+        {
+          "id": 1,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        },
+        {
+          "id": 2,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        },
+        {
+          "id": 3,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        },
+        {
+          "id": 4,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        },
+        {
+          "id": 5,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        },
+        {
+          "id": 6,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        }
+      ]
+    },
+    {
+      "text": "电子 >",
+      "items": [
+        {
+          "id": 1,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        },
+        {
+          "id": 2,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        },
+        {
+          "id": 3,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        },
+        {
+          "id": 4,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        },
+        {
+          "id": 5,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        },
+        {
+          "id": 6,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        }
+      ]
+    },
+    {
+      "text": "美妆 >",
+      "items": [
+        {
+          "id": 1,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        },
+        {
+          "id": 2,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        },
+        {
+          "id": 3,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        },
+        {
+          "id": 4,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        },
+        {
+          "id": 5,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        },
+        {
+          "id": 6,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        }
+      ]
+    },
+    {
+      "text": "童装 >",
+      "items": [
+        {
+          "id": 1,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        },
+        {
+          "id": 2,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        },
+        {
+          "id": 3,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        },
+        {
+          "id": 4,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        },
+        {
+          "id": 5,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        },
+        {
+          "id": 6,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        }
+      ]
+    },
+    {
+      "text": "家具 >",
+      "items": [
+        {
+          "id": 1,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        },
+        {
+          "id": 2,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        },
+        {
+          "id": 3,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        },
+        {
+          "id": 4,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        },
+        {
+          "id": 5,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        },
+        {
+          "id": 6,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        }
+      ]
+    },
+    {
+      "text": "耐克 >",
+      "items": [
+        {
+          "id": 1,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        },
+        {
+          "id": 2,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        },
+        {
+          "id": 3,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        },
+        {
+          "id": 4,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        },
+        {
+          "id": 5,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        },
+        {
+          "id": 6,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        }
+      ]
+    },
+    {
+      "text": "阿迪 >",
+      "items": [
+        {
+          "id": 1,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        },
+        {
+          "id": 2,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        },
+        {
+          "id": 3,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        },
+        {
+          "id": 4,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        },
+        {
+          "id": 5,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        },
+        {
+          "id": 6,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        }
+      ]
+    },
+    {
+      "text": "宜家 >",
+      "items": [
+        {
+          "id": 1,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        },
+        {
+          "id": 2,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        },
+        {
+          "id": 3,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        },
+        {
+          "id": 4,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        },
+        {
+          "id": 5,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        },
+        {
+          "id": 6,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        }
+      ]
+    },
+    {
+      "text": "安踏 >",
+      "items": [
+        {
+          "id": 1,
+          "price": 100,
+          "img": "../../images/hua.jpg",
+          "text": "武夷山大红袍，买三赠一"
+        },
+        {
+          "id": 1,
+          "price": 100,
+          "img": "../../images/xie.jpg",
+          "text": "武夷山大红袍，买三赠一"
+        },
+        {
+          "id": 1,
+          "price": 100,
+          "img": "../../images/tixudao.jpg",
+          "text": "武夷山大红袍，买三赠一"
+        },
+        {
+          "id": 1,
+          "price": 100,
+          "img": "../../images/xian.jpg",
+          "text": "武夷山大红袍，买三赠一"
+        },
+        {
+          "id": 1,
+          "price": 100,
+          "img": "../../images/cha.jpg",
+          "text": "武夷山大红袍，买三赠一"
+        },
+        {
+          "id": 1,
+          "price": 100,
+          "img": "../../images/xie.jpg",
+          "text": "武夷山大红袍，买三赠一"
+        }
+      ]
+    },
+    {
+      "text": "匹克 >",
+      "items": [
+        {
+          "id": 1,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        },
+        {
+          "id": 2,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        },
+        {
+          "id": 3,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        },
+        {
+          "id": 4,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        },
+        {
+          "id": 5,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        },
+        {
+          "id": 6,
+          "price": 100,
+          "img": "../img/logo.png",
+          "text": "武夷山大红袍，买三赠一"
+        }
+      ]
+    }
+  ]
+}

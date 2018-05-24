@@ -5,8 +5,11 @@ import {
     Text,
     View,
     Button,
-    ScrollView
+    ScrollView,
+    Dimensions
 } from 'react-native';
+
+const {width, height} = Dimensions.get('window');
 
 export default class Test3 extends Component {
     static navigationOptions = ({navigation,screenProps}) => ({
@@ -17,13 +20,11 @@ export default class Test3 extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <ScrollView style={{flex: 1}}>
+                <ScrollView style={{flex: 1, width: width}}>
                     <Text style={styles.welcome}>
                        Welcome to Test3!
                     </Text>
-                    <Text style={styles.instructions}>
-                    当前页面的Tabbar是在App.js中定义的，通过封装一些方法实现。
-                    </Text>
+
                     <View style={styles.btn}>
                         <Button title={'Animation'} onPress={()=>{
                             this.props.navigation.navigate('Animation')
@@ -47,11 +48,6 @@ export default class Test3 extends Component {
                     <View style={styles.btn}>
                         <Button title={'Rotate'} onPress={()=>{
                             this.props.navigation.navigate('Rotate')
-                        }}/>
-                    </View>
-                    <View style={styles.btn}>
-                        <Button title={'Drawer'} onPress={()=>{
-                            this.props.navigation.navigate('Drawer')
                         }}/>
                     </View>
                     <View style={styles.btn}>
@@ -94,9 +90,14 @@ export default class Test3 extends Component {
                             this.props.navigation.navigate('MiCustom')
                         }}/>
                     </View>
+                    <View style={styles.btn}>
+                        <Button title={'Cart'} onPress={()=>{
+                            this.props.navigation.navigate('Cart')
+                        }}/>
+                    </View>
                     <View style={[styles.btn, styles.mb]}>
-                        <Button title={'Login'} onPress={()=>{
-                            this.props.navigation.navigate('Login')
+                        <Button title={'Category'} onPress={()=>{
+                            this.props.navigation.navigate('Category')
                         }}/>
                     </View>
                 </ScrollView>
@@ -108,6 +109,7 @@ export default class Test3 extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        width: width,
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#F5FCFF',
@@ -116,14 +118,6 @@ const styles = StyleSheet.create({
         fontSize: 20,
         textAlign: 'center',
         margin: 10,
-
-    },
-    instructions: {
-        marginTop:10,
-        textAlign: 'center',
-        color: '#333333',
-        marginBottom: 5,
-        fontSize:18
     },
     btn: {
         padding: 5

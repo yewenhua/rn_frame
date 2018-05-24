@@ -7,9 +7,10 @@ import {
     TouchableOpacity,
     Dimensions,
     Image,
-    TextInput
+    TextInput,
+    AsyncStorage
 } from 'react-native';
-import { Button } from 'antd-mobile';
+import { Button, Toast } from 'antd-mobile';
 
 const {width, height} = Dimensions.get('window');
 
@@ -46,6 +47,21 @@ export default class Login extends Component {
         });
     }
 
+    signin = async () => {
+        if(!this.state.name){
+            Toast.info('请输入用户名', 1);
+            return false;
+        }
+
+        if(!this.state.pwd){
+            Toast.info('请输入密码', 1);
+            return false;
+        }
+
+        await AsyncStorage.setItem('userToken', JSON.stringify({name: this.state.name, pwd: 'this is the wrong one'}));
+        this.props.navigation.navigate('App');
+    };
+
     render() {
         return <View style={styles.container}>
             <Image
@@ -63,12 +79,12 @@ export default class Login extends Component {
             <TextInput
                 style={[styles.input, styles.pwd]}
                 underlineColorAndroid='transparent'
-                onChangeText={(name) => this.setState({name})}
+                onChangeText={(pwd) => this.setState({pwd})}
                 placeholder="请输入密码"
                 placeholderTextColor="#C0C0C0"
-                value={this.state.name}
+                value={this.state.pwd}
             />
-            <Button type="primary" style={styles.btn}>登录</Button>
+            <Button type="primary" style={styles.btn} onClick={this.signin}>登录</Button>
             <View style={styles.regist}>
                 <View style={[styles.left, styles.bright]}>
                     <Text style={styles.forget} onPress={()=>{

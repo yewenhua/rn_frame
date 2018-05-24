@@ -9,8 +9,12 @@ import {
     AppRegistry,
     StyleSheet,
     Text,
-    View
+    View,
+    AsyncStorage
 } from 'react-native';
+import PullRefresh from './PullRefresh'
+import Utils from './Utils'
+import Storage from './Storage'
 
 export default class Detail1 extends Component {
 
@@ -19,7 +23,7 @@ export default class Detail1 extends Component {
         // 这里面的属性和App.js的navigationOptions是一样的。
         headerTitle:navigation.state.params?navigation.state.params.headerTitle:'Detail1',
         headerRight:(
-            <Text style={{color:'red',marginRight:20}} onPress={()=>navigation.state.params?navigation.state.params.navigatePress():null}>我的</Text>
+            <Text style={{color:'red',marginRight:20}} onPress={()=>navigation.state.params?navigation.state.params.navigatePress():null}>退出</Text>
         ),
         headerStyle:{
             backgroundColor:'#4ECBFC',
@@ -43,23 +47,64 @@ export default class Detail1 extends Component {
         });
     }
 
-    navigatePress = () => {
-        alert('点击headerRight');
+    navigatePress = async () => {
+        await AsyncStorage.clear();
+        this.props.navigation.navigate('Auth');
+    }
+
+    _onRefresh(cb){
+        //alert('onRefresh');
+        cb();
     }
 
     render() {
         return (
             <View style={styles.container}>
-              <Text style={styles.welcome}>
-                Welcome to Detail1!
-              </Text>
-              <Text style={styles.instructions} onPress={()=>{
-            const { navigate } = this.props.navigation;
-              navigate('Detail2');
-          }}>
-                跳转到Detail2
-              </Text>
-
+              <PullRefresh ref="Test" style={styles.refresh} onRefresh={this._onRefresh}>
+                  <View style={styles.refresh}>
+                      <Text style={styles.welcome}>
+                        Welcome to Detail1!试着下拉看看
+                      </Text>
+                      <Text style={styles.instructions} onPress={()=>{
+                          const { navigate } = this.props.navigation;
+                          navigate('Detail2');
+                      }}>
+                        跳转到Detail2
+                      </Text>
+                      <Text style={styles.instructions} onPress={()=>{
+                          let res = Storage.save('key', {id: 1, name: 'kitty'});
+                          res.then((data)=>{
+                              alert(JSON.stringify(data));
+                          });
+                      }}>
+                          存储数据到本地
+                      </Text>
+                      <Text style={styles.instructions} onPress={()=>{
+                          let res = Storage.get('key');
+                          res.then((data)=>{
+                              alert(JSON.stringify(data));
+                          });
+                      }}>
+                          获取本地存储数据
+                      </Text>
+                      <Text style={styles.instructions} onPress={()=>{
+                          let res = Storage.save('key', {id: 1, name: 'world'});
+                          res.then((data)=>{
+                              alert(JSON.stringify(data));
+                          });
+                      }}>
+                          修改本地存储数据
+                      </Text>
+                      <Text style={styles.instructions} onPress={()=>{
+                          let res = Storage.delete('key');
+                          res.then((data)=>{
+                              alert(JSON.stringify(data));
+                          });
+                      }}>
+                          删除本地存储数据
+                      </Text>
+                  </View>
+              </PullRefresh>
             </View>
         );
     }
@@ -67,7 +112,13 @@ export default class Detail1 extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
+        width: Utils.size.width,
+        height: Utils.size.height,
+        backgroundColor: '#F5FCFF',
+    },
+    refresh:{
+        width: Utils.size.width,
+        height: Utils.size.height,
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#F5FCFF',

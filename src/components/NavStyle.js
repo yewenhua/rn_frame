@@ -25,7 +25,7 @@ export default class NavStyle extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    height:64,
+    height:48,
     // backgroundColor:'#4ECBFC',
     flexDirection:'row',
   },

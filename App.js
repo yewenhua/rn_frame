@@ -7,7 +7,7 @@ import {
   StatusBar
 } from 'react-native';
 
-import Routers from './src/components/Routers'
+import Routers from './src/components/route/Routers'
 import SplashScreen from 'react-native-splash-screen'
 import {Provider} from 'react-redux';
 import {store} from './src/store/index.js';
@@ -23,6 +23,7 @@ export default class App extends Component<{}> {
                 <View style={styles.container}>
                     <StatusBar
                         backgroundColor="#4ECBFC"
+                        hidden={false}
                         barStyle="light-content"
                     />
                     {/*

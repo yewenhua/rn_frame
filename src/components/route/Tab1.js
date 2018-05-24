@@ -3,9 +3,13 @@ import React, { Component } from 'react';
 import {
   StyleSheet,
   Text,
-  View
+  View,
+  NetInfo,
+  CameraRoll
 } from 'react-native';
 import JPushModule from 'jpush-react-native';
+
+const Geolocation = require('Geolocation');
 
 export default class Test1 extends Component {
     constructor(props){
@@ -14,6 +18,46 @@ export default class Test1 extends Component {
             pushMsg: '',
             notification: ''
         };
+    }
+
+    getLocation(){
+        Geolocation.getCurrentPosition((data)=>{
+            alert(JSON.stringify(data));
+        }, (err)=>{
+            alert(JSON.stringify(err));
+        });
+    }
+
+    getNetInfo(){
+        NetInfo.getConnectionInfo().then((connectionInfo) => {
+            alert(JSON.stringify(connectionInfo));
+        });
+
+        function handleFirstConnectivityChange(connectionInfo) {
+            alert('First change, type: ' + connectionInfo.type + ', effectiveType: ' + connectionInfo.effectiveType);
+            NetInfo.removeEventListener(
+                'connectionChange',
+                handleFirstConnectivityChange
+            );
+        }
+
+        NetInfo.addEventListener(
+            'connectionChange',
+            handleFirstConnectivityChange
+        );
+    }
+
+    getPhotos(){
+        CameraRoll.getPhotos({
+            first: 20,
+            assetType: 'Photos',
+        })
+        .then(r => {
+            alert(JSON.stringify(r.edges));
+        })
+        .catch((err) => {
+            alert(JSON.stringify(err));
+        });
     }
 
     render() {
@@ -33,6 +77,12 @@ export default class Test1 extends Component {
                       navigate('Detail2');
                 }}>
                   在Detail2中有reset和navigate的使用方法(点文字跳转)
+                </Text>
+
+                <Text style={styles.instructions} onPress={()=>{
+                    this.props.navigation.navigate('DrawerOpen');
+                }}>
+                    openDrawer
                 </Text>
             </View>
         );
@@ -59,8 +109,12 @@ export default class Test1 extends Component {
         // 打开通知
         JPushModule.addReceiveOpenNotificationListener((map) => {
             // 可执行跳转操作，也可跳转原生页面
-            this.props.navigation.navigate("Login");
+            this.props.navigation.navigate("Category");
         });
+
+        //this.getLocation();
+        //this.getNetInfo();
+        //this.getPhotos();
     }
 
     componentWillUnmount() {
