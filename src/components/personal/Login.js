@@ -1,6 +1,6 @@
 'use strict';
 import React, {Component} from 'react';
-import {
+import ReactNative, {
     StyleSheet,
     Text,
     View,
@@ -8,7 +8,8 @@ import {
     Dimensions,
     Image,
     TextInput,
-    AsyncStorage
+    AsyncStorage,
+    ScrollView
 } from 'react-native';
 import { Button, Toast } from 'antd-mobile';
 
@@ -36,7 +37,8 @@ export default class Login extends Component {
         super(...arguments);
         this.state = {
             name: '',
-            pwd: ''
+            pwd: '',
+            activeNode: ''
         };
     }
 
@@ -62,51 +64,78 @@ export default class Login extends Component {
         this.props.navigation.navigate('App');
     };
 
+    scrollViewTo(param, e) {
+        let target = e.nativeEvent.target;
+        let scrollLength = 0;//初始值
+        if (target === ReactNative.findNodeHandle(this.refs[param])) {
+            scrollLength = 216;
+        }
+        this.refs.scroll.scrollTo({y: scrollLength, x: 0});
+        this.setState({
+            activeNode: param
+        });
+    }
+
     render() {
-        return <View style={styles.container}>
-            <Image
-                source={require('../../img/logo.png')}
-                style={styles.logo}
-            />
-            <TextInput
-                style={[styles.input, styles.name]}
-                underlineColorAndroid='transparent'
-                onChangeText={(name) => this.setState({name})}
-                placeholder="请输入用户名"
-                placeholderTextColor="#C0C0C0"
-                value={this.state.name}
-            />
-            <TextInput
-                style={[styles.input, styles.pwd]}
-                underlineColorAndroid='transparent'
-                onChangeText={(pwd) => this.setState({pwd})}
-                placeholder="请输入密码"
-                placeholderTextColor="#C0C0C0"
-                value={this.state.pwd}
-            />
-            <Button type="primary" style={styles.btn} onClick={this.signin}>登录</Button>
-            <View style={styles.regist}>
-                <View style={[styles.left, styles.bright]}>
-                    <Text style={styles.forget} onPress={()=>{
-                        const { navigate } = this.props.navigation;
-                        navigate('Regist');
-                    }}>注册账号</Text>
+        return (
+            <ScrollView style={{flex: 1}} ref='scroll' keyboardShouldPersistTaps="always">
+                <View style={styles.container} onStartShouldSetResponderCapture={(e) => {
+                    let target = e.nativeEvent.target;
+                    if (target !== ReactNative.findNodeHandle(this.refs.name) ) {
+                        this.refs.name.blur();
+                    }
+                }}>
+                    <Image
+                        source={require('../../img/logo.png')}
+                        style={styles.logo}
+                    />
+                    <TextInput
+                        ref='name'
+                        style={[styles.input, styles.name]}
+                        underlineColorAndroid='transparent'
+                        onChangeText={(name) => this.setState({name})}
+                        placeholder="请输入用户名"
+                        placeholderTextColor="#C0C0C0"
+                        value={this.state.name}
+                        onFocus={this.scrollViewTo.bind(this, 'name')}
+                        onEndEditing={()=>{this.refs.scroll.scrollTo({y:0,x:0,animated:true})}}
+                    />
+                    <TextInput
+                        ref='pwd'
+                        style={[styles.input, styles.pwd]}
+                        underlineColorAndroid='transparent'
+                        onChangeText={(pwd) => this.setState({pwd})}
+                        placeholder="请输入密码"
+                        placeholderTextColor="#C0C0C0"
+                        value={this.state.pwd}
+                        onFocus={this.scrollViewTo.bind(this, 'pwd')}
+                        onEndEditing={()=>{this.refs.scroll.scrollTo({y:0,x:0,animated:true})}}
+                    />
+                    <Button type="primary" style={styles.btn} onClick={this.signin}>登录</Button>
+                    <View style={styles.regist}>
+                        <View style={[styles.left, styles.bright]}>
+                            <Text style={styles.forget} onPress={()=>{
+                                const { navigate } = this.props.navigation;
+                                navigate('Regist');
+                            }}>注册账号</Text>
+                        </View>
+                        <View style={styles.right}>
+                            <Text style={styles.forget} onPress={()=>{
+                                const { navigate } = this.props.navigation;
+                                navigate('Forget');
+                            }}>忘记密码</Text>
+                        </View>
+                    </View>
                 </View>
-                <View style={styles.right}>
-                    <Text style={styles.forget} onPress={()=>{
-                        const { navigate } = this.props.navigation;
-                        navigate('Forget');
-                    }}>忘记密码</Text>
-                </View>
-            </View>
-        </View>;
+            </ScrollView>
+        );
     }
 }
 
 const hairline = StyleSheet.hairlineWidth;
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
+        height: height,
         alignItems: 'center',
         overflow: 'hidden',
         backgroundColor: 'white'

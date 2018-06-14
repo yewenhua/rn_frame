@@ -13,7 +13,7 @@ const GankIconFill = require('../../img/pic_fill.png');
 
 let badgeNumber = 11;
 
-export default class Test2 extends Component {
+export default class Tab2 extends Component {
     static navigationOptions = ({navigation, screenProps}) => ({
         tabBarOnPress:(({ scene,jumpToIndex})=>{
             jumpToIndex(scene['index']);

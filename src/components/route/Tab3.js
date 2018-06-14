@@ -11,7 +11,7 @@ import {
 
 const {width, height} = Dimensions.get('window');
 
-export default class Test3 extends Component {
+export default class Tab3 extends Component {
     static navigationOptions = ({navigation,screenProps}) => ({
         tabBarOnPress:(({ scene ,jumpToIndex})=>{
             jumpToIndex(scene['index']);

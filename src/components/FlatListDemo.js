@@ -54,7 +54,6 @@ export default class FlatListDemo extends Component {
     _keyExtractor = (item, index) => index;
 
     render() {
-
         return (
             <View style={{flex:1}}>
                 <Button title='滚动到指定位置' onPress={()=>{
@@ -69,11 +68,7 @@ export default class FlatListDemo extends Component {
                         ListFooterComponent={this._footer}
                         ItemSeparatorComponent={this._separator}
                         renderItem={this._renderItem}
-
                         numColumns ={2}
-                        //columnWrapperStyle={{borderWidth:2,borderColor:'black',paddingLeft:20}}
-
-                        //horizontal={true}
 
                         //用于避免动态测量内容尺寸的开销
                         getItemLayout={(data,index)=>(
@@ -82,7 +77,6 @@ export default class FlatListDemo extends Component {
                         )}
 
                         keyExtractor={this._keyExtractor}
-
                         refreshing={this.state.refreshing}
                         onRefresh={()=>{
                             this.setState({refreshing: true})//开始刷新
@@ -91,30 +85,29 @@ export default class FlatListDemo extends Component {
                                 this.setState({refreshing: false});//停止刷新
                             }.bind(this), 2000);
                         }}
-                        onEndReachedThreshold={0.1}
+                        onEndReachedThreshold={0.1}  //此参数是一个比值而非像素单位。比如，0.5表示距离内容最底部的距离为当前列表可见长度的一半
                         onEndReached={(info)=>{
-                            //Alert.alert('title', '滑动到底部了');
                             this.setState((state) => ({
                                 loading: true
                             }));
 
-                            setTimeout(() => {
-                                var data = [];
-                                for (var i = 0; i < 10; i++) {
-                                    data.push({key: i, title: i + ''});
-                                }
+                            if(!this.state.loading) {
+                                setTimeout(() => {
+                                    var data = [];
+                                    for (var i = 0; i < 10; i++) {
+                                        data.push({key: i, title: i + ''});
+                                    }
 
-                                this.setState((state) => ({
-                                    data: state.data.concat(data),
-                                    loading: false
-                                }));
-                            }, 2000)
+                                    this.setState((state) => ({
+                                        data: state.data.concat(data),
+                                        loading: false
+                                    }));
+                                }, 2000)
+                            }
                         }}
-
                         data={this.state.data}>
                     </FlatList>
                 </View>
-
             </View>
         );
     }

@@ -24,6 +24,8 @@ import Category from '../Category';
 import SearchResults from '../SearchResults';
 import GoodsDetail from '../goods/Detail';
 import Cart from '../goods/Cart';
+import My from '../personal/My';
+import Timeline from '../Timeline';
 
 // 初始化StackNavigator
 export default StackNavigator({
@@ -113,6 +115,12 @@ export default StackNavigator({
     },
     Cart:{
         screen: Cart
+    },
+    My:{
+        screen: My
+    },
+    Timeline:{
+        screen: Timeline
     },
 },{
     initialRouteName: 'TabNav',

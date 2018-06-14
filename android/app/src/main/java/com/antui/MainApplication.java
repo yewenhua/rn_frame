@@ -14,6 +14,9 @@ import cn.jpush.reactnativejpush.JPushPackage;
 import java.util.Arrays;
 import java.util.List;
 
+import com.theweflex.react.WeChatPackage;
+import com.antui.alipay.AlipayPackage;
+
 public class MainApplication extends Application implements ReactApplication {
   private boolean SHUTDOWN_TOAST = false;
   private boolean SHUTDOWN_LOG = false;
@@ -30,7 +33,9 @@ public class MainApplication extends Application implements ReactApplication {
           new MainReactPackage(),
           new SvgPackage(),
           new SplashScreenReactPackage(),
-          new JPushPackage(SHUTDOWN_TOAST, SHUTDOWN_LOG)
+          new JPushPackage(SHUTDOWN_TOAST, SHUTDOWN_LOG),
+          new WeChatPackage(),
+          new AlipayPackage()
       );
     }
 
